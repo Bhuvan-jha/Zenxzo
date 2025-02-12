@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Profile</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-style: italic;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #150022;
+        }
+
+        /* Photo */
+
+        .pic {
+           
+            width: 150px;
+           height: 190px;
+           
+
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('istockphoto-1290826577-612x612.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-top: 20px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+
+        /* Clock */
+        .clock {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        /* Keyframes for fadeIn */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .about h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        .about p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 60px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .skills h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .skills-item {
+            margin: 15px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 60px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        .portfolio-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-item {
+            margin: 15px;
+            width: 250px;
+            background-color: #272525;
+            padding: 15px;
+            border-radius: 10px;
+            
+            
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 5px;
+            height: 170px;
+        }
+        .portfolio-item:hover {
+            color: #fbff00;
+        } 
+
+        /* more */
+
+        .lmore {
+            background-color: #272525;
+            color: #fff;
+            padding: auto;
+            border:#272525;
+        }
+        .lmore :hover{
+            
+            color: #fbff00;
+        }
+
+        /* Contact Section */
+        .contact {
+            
+            padding: 60px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 30px;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            background-color: #f4b400;
+            border: none;
+            padding: 15px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .contact form button:hover {
+            background-color: #e8a500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .skills-list, .portfolio-items {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+
+            <h1>Welcome to My Profile</h1>
+            <p>Web Developer | Designer | Programmer</p>
+        </div>
+        <!-- Clock -->
+        <div class="clock" id="clock">
+            00:00:00
+        </div>
+        <div>
+            
+            <img src="unnamed.png" alt="reload" style="width: 150px; height: 100px; float: left; margin:top;">
+            
+        </div>
+    </section>
+
+    
+    
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>I'm a passionate web developer with experience in creating dynamic and responsive websites. My goal is to deliver high-quality, innovative solutions that meet the unique needs of each client. Whether you're looking to build a personal portfolio, a corporate site, or an e-commerce platform, I'm here to help.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skills-item">HTML & CSS</div>
+            <div class="skills-item">JavaScript</div>
+            <div class="skills-item">React.js</div>
+            <div class="skills-item">Node.js</div>
+            <div class="skills-item">Python</div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+     
+    <section class="portfolio" id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-items">
+            <div class="portfolio-item">
+                <img src="calculator_design.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <button>
+                        <a href="fury2.html">
+                            <section class="lmore" id="lmore">
+                                
+                             <p>I Design A Calculator With The Help Of HTML,CSS,JavaScript </p>
+ 
+            
+                            </section>
+
+            </div>
+        </a>
+        </button>
+            <div class="portfolio-item">
+                <img src="01-40-to-01-45-clock-five-minutes-time-lapse-animation-black-and-white-luma-matte-selection-am-pm-free-video.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>2nd I Design A Along clock  With The Help Of HTML,CSS,JavaScript </p>
+            </div>
+            <div class="portfolio-item">
+                <img src="" alt="Project 3">
+                <h3>Project 3</h3>
+                <p> My More Projects And Design Tuarials  </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <centre> <h2>Contact Me</h2></centre> 
+        <form onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 My Profile. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Clock and Form Validation -->
+    <script>
+        // Clock function
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            // Pad with zeros
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            document.getElementById('clock').textContent = hours + ':' + minutes + ':' + seconds;
+        }
+
+        setInterval(updateClock, 1000); // Update the clock every second
+
+        // Form validation
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            if (name === '' || email === '' || message === '') {
+                alert('All fields are required.');
+                return false;
+            }
+
+            alert('Message sent successfully!');
+            return true;
+        }
+
+        function portfoliocard() {
+
+            
+
+
+
+
+        }
+    </script>
+
+</body>
+</html>
